@@ -21,6 +21,7 @@ class ChatForm extends React.Component {
   }
   // 서버에 이름과 메시지 전송 --- (※3)
   send () {
+    console.log('메세지 전송 시작!') // TEST
     socket.emit('chat-msg', {
       name: this.state.name,
       message: this.state.message
