@@ -2,6 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styles from './styles.js'
 
+/**
+ * 제목 : 실시간 채팅APP 구형
+ * 작성일 : 2019-09-03
+ * 작성자 : 권재순
+*/
 // Socket.IO로 웹 소켓 서버에 접속하기 --- (※1)
 import socketio from 'socket.io-client'
 const socket = socketio.connect('http://localhost:3001')
@@ -21,6 +26,7 @@ class ChatForm extends React.Component {
   }
   // 서버에 이름과 메시지 전송 --- (※3)
   send () {
+    console.log('메세지 전송 시작!') // TEST
     socket.emit('chat-msg', {
       name: this.state.name,
       message: this.state.message
